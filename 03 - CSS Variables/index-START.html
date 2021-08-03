@@ -61,6 +61,18 @@
   </style>
 
   <script>
+
+    const inputs = document.querySelectorAll('.controls input');
+
+    function handleChange() {
+      console.log(this.dataset)
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('change', handleChange)
+      input.addEventListener('mousemove', handleChange)
+    })
+
   </script>
 
 </body>
