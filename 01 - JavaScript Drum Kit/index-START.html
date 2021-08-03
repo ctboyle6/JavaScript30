@@ -59,8 +59,7 @@
 
 <script>
 
-  window.addEventListener('keydown', (event) => {
-    // trigger audio
+  function playSound(e) {
     const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
     if (!audio) return; // stop function if keypress with no key
@@ -69,7 +68,7 @@
 
     // add styling
     key.classList.add('playing');
-  })
+  }
 
   function removeTransition(e) {
     if (e.propertyName !== 'transform') return // only let thru the transform properties
@@ -79,6 +78,8 @@
 
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+  window.addEventListener('keydown', playSound);
 
 </script>
 
