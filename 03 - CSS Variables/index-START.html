@@ -23,7 +23,7 @@
   <style>
 
     :root {
-      --base: #186800;
+      --base: #ffc600;
       --spacing: 10px;
       --blur: 10px;
     }
@@ -65,7 +65,9 @@
     const inputs = document.querySelectorAll('.controls input');
 
     function handleChange() {
-      console.log(this.dataset)
+      const suffix = this.dataset.sizing || '';
+
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
     inputs.forEach(input => {
