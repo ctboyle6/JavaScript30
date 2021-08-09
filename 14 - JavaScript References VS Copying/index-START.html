@@ -34,7 +34,7 @@
     const team = [...players];
     const team2 = Array.from(players);
 
-    console.log(team);
+    // console.log(team);
 
     // now when we update it, the original one isn't changed
 
@@ -49,10 +49,15 @@
     // and think we make a copy:
 
     // how do we take a copy instead?
+    const captain = Object.assign({}, person, { name: "charles2" })
+
+    // console.log(captain)
 
     // We will hopefully soon see the object ...spread
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    const deepCaptain = JSON.parse(JSON.stringify(person));
+    console.log(deepCaptain)
 
   </script>
 
