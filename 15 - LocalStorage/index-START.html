@@ -28,7 +28,7 @@
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
+  const items = JSON.parse(localStorage.getItem('items')) || [];
 
   // add an item to the items array when form is submitted
   function addPlate(e) {
@@ -42,6 +42,7 @@
 
     items.push(item);
     populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
     this.reset();
   }
 
@@ -59,6 +60,7 @@
     }).join('');
   }
 
+  populateList(items, itemsList);
 
 </script>
 
