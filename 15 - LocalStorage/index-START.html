@@ -60,6 +60,17 @@
     }).join('');
   }
 
+  // persist checked in local storage
+  function toggleDone(e) {
+    if (!e.target.matches('input')) return // filter all non-input targets
+    const input = e.target
+    const index = input.dataset.index
+    items[index].done = !items[index].done
+    populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+
+  itemsList.addEventListener('click', toggleDone)
   populateList(items, itemsList);
 
 </script>
