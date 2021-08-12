@@ -30,6 +30,24 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  // add an item to the items array when form is submitted
+  function addPlate(e) {
+    e.preventDefault();
+    
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+      text,
+      done: false
+    };
+
+    items.push(item);
+
+    this.reset();
+  }
+
+  addItems.addEventListener('submit', addPlate);
+  // populate list of html elements from items array
+
 </script>
 
 
