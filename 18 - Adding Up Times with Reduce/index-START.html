@@ -182,6 +182,16 @@
     </li>
   </ul>
 <script>
+
+  const timeNodes = [...document.querySelectorAll('[data-time]')];
+
+  const vidTimes = timeNodes.map(time => time.dataset.time.split(':').map(parseFloat))
+
+  const totalSeconds = vidTimes.map(vidTime => {
+    const [mins, secs] = vidTime;
+    return (mins * 60) + secs;
+  })
+
 </script>
 </body>
 </html>
