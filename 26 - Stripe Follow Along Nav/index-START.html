@@ -230,7 +230,9 @@
     target.classList.add('trigger-enter');
     setTimeout(() => {target.classList.add('trigger-enter-active')}, 150);
   };
-  const handleLeave = () => {console.log('leave')};
+  const handleLeave = (e) => {
+    e.currentTarget.classList.remove('trigger-enter', 'trigger-enter-active');  
+  };
 
   triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
   triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
