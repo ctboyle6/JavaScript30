@@ -225,7 +225,11 @@
   const background = document.querySelector('.dropdownBackground');
   const nav = document.querySelector('.top');
 
-  const handleEnter = () => {console.log('enter')};
+  const handleEnter = (e) => {
+    let target = e.currentTarget;
+    target.classList.add('trigger-enter');
+    setTimeout(() => {target.classList.add('trigger-enter-active')}, 150);
+  };
   const handleLeave = () => {console.log('leave')};
 
   triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
