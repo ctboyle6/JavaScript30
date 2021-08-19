@@ -220,6 +220,18 @@
 </style>
 
 <script>
+
+  const triggers = document.querySelectorAll('.cool > li');
+  const background = document.querySelector('.dropdownBackground');
+  const nav = document.querySelector('.top');
+
+  const handleEnter = () => {console.log('enter')};
+  const handleLeave = () => {console.log('leave')};
+
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
+  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
+
+
 </script>
 
 </body>
