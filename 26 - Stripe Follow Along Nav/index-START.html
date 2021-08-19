@@ -228,7 +228,7 @@
   const handleEnter = (e) => {
     let target = e.currentTarget;
     target.classList.add('trigger-enter');
-    setTimeout(() => {target.classList.add('trigger-enter-active')}, 150);
+    setTimeout(() => {target.classList.contains('trigger-enter') && target.classList.add('trigger-enter-active')}, 150);
 
     background.classList.add('open');
 
