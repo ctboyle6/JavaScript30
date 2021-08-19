@@ -229,15 +229,17 @@
     let target = e.currentTarget;
     target.classList.add('trigger-enter');
     setTimeout(() => {target.classList.add('trigger-enter-active')}, 150);
+
+    background.classList.add('open');
   };
+
   const handleLeave = (e) => {
     e.currentTarget.classList.remove('trigger-enter', 'trigger-enter-active');  
+    background.classList.remove('open');
   };
 
   triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
   triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
-
-
 </script>
 
 </body>
